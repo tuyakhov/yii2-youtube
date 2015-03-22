@@ -38,7 +38,7 @@ class CodeValidator extends Validator
     {
         parent::init();
         if ($this->message === null) {
-            $this->message = Yii::t('youtube', '{attribute} contains invalid video code.');
+            $this->message = '{attribute} contains invalid video code.';
         }
     }
 
