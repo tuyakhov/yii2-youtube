@@ -29,7 +29,7 @@ class CodeValidator extends Validator
     /**
      * @var string the regular expression used to validate the attribute value.
      */
-    public $codePattern = '/[A-za-z0-9_-]{11}$/';
+    public $codePattern = '/[A-za-z0-9_-]{11}/';
 
     /**
      * @inheritdoc
@@ -80,8 +80,23 @@ class CodeValidator extends Validator
      */
     protected function getCodeFromUrl($url)
     {
-        parse_str(parse_url($url, PHP_URL_QUERY), $vars);
-        return isset($vars['v']) ? $vars['v'] : null;
+        $parts = parse_url($url);
+        if(isset($parts['query'])){
+            parse_str($parts['query'], $qs);
+            if(isset($qs['v'])){
+                return $qs['v'];
+            }else if(isset($qs['vi'])){
+                return $qs['vi'];
+            }
+        }
+        if(isset($parts['path'])){
+            $path = explode('/', trim($parts['path'], '/'));
+            return $path[count($path)-1];
+        }
+        if (preg_match($this->codePattern, $url, $match)) {
+            return $match[0];
+        }
+        return null;
     }
 
     /**
