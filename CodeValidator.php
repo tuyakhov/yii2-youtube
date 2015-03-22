@@ -89,7 +89,9 @@ class CodeValidator extends Validator
      */
     public function clientValidateAttribute($model, $attribute, $view)
     {
-        $message = json_encode($this->message, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $message = json_encode(Yii::$app->getI18n()->format($this->message, [
+            'attribute' => $model->getAttributeLabel($attribute),
+        ], Yii::$app->language), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         return "if (!value.match('$this->codePattern')) { messages.push($message); };";
     }
 } 
