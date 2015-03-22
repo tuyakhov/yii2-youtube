@@ -29,7 +29,7 @@ class CodeValidator extends Validator
     /**
      * @var string the regular expression used to validate the attribute value.
      */
-    public $codePattern = '/^[A-za-z0-9_-]{11}$/';
+    public $codePattern = '/[A-za-z0-9_-]{11}$/';
 
     /**
      * @inheritdoc
@@ -92,6 +92,6 @@ class CodeValidator extends Validator
         $message = json_encode(Yii::$app->getI18n()->format($this->message, [
             'attribute' => $model->getAttributeLabel($attribute),
         ], Yii::$app->language), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        return "if (!value.match('$this->codePattern')) { messages.push($message); };";
+        return "if (!value.match($this->codePattern)) { messages.push($message); };";
     }
 } 
