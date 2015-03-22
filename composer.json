@@ -1,0 +1,21 @@
+{
+    "name": "tuyakhov/yii2-youtube",
+    "description": "Yii2 youtube extension",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Tuyakhov",
+            "email": "atuyakhov@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "tuyakhov\\youtube\\": ""
+        }
+    }
+}
