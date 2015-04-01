@@ -107,6 +107,10 @@ class CodeValidator extends Validator
         $message = json_encode(Yii::$app->getI18n()->format($this->message, [
             'attribute' => $model->getAttributeLabel($attribute),
         ], Yii::$app->language), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        return "if (!value.match($this->codePattern)) { messages.push($message); };";
+        $condition = "!value.match($this->codePattern)";
+        if ($this->skipOnEmpty) {
+            $condition .= " && value != ''";
+        }
+        return "if ($condition) { messages.push($message); };";
     }
 } 
