@@ -2,7 +2,7 @@ Yii2 youtube extension
 ======================
 Yii2 youtube extension
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/badges/build.png?b=master)](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/badges/build.png?b=master)](https://scrutinizer-ci.com/g/tuyakhov/yii2-youtube/build-status/master) [![Code Climate](https://codeclimate.com/github/tuyakhov/yii2-youtube/badges/gpa.svg)](https://codeclimate.com/github/tuyakhov/yii2-youtube)
 
 Installation
 ------------
